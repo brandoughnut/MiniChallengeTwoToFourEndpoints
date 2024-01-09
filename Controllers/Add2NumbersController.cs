@@ -14,7 +14,7 @@ public class Add2NumbersController : ControllerBase
     }
     [HttpGet]
     [Route("AddNumbers/{numOne}/{numTwo}")]
-    public double AddNumbers(double numOne, double numTwo)
+    public string AddNumbers(string numOne, string numTwo)
     {
         return _addService.AddNumbers(numOne, numTwo);
     }

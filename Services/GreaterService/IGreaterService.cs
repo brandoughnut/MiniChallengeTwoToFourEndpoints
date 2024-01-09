@@ -1,7 +1,5 @@
-namespace MiniChallengeTwoToFourEndpoints.Services.AddService.AskingService.GreaterService
-{
+namespace MiniChallengeTwoToFourEndpoints.Services.AddService.AskingService.GreaterService;
     public interface IGreaterService
     {
-        string GreaterLess(double numOne, double numTwo);
+        string GreaterLess(string numOne, string numTwo);
     }
-}

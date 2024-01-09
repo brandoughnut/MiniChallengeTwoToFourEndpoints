@@ -1,19 +1,30 @@
 namespace MiniChallengeTwoToFourEndpoints.Services.AddService.AskingService.GreaterService;
 public class GreaterService : IGreaterService
 {
-    public string GreaterLess(double numOne, double numTwo)
+    public string GreaterLess(string numOne, string numTwo)
     {
-        if (numOne > numTwo)
+        bool isTrue1 = Double.TryParse(numOne, out double num1);
+        bool isTrue2 = Double.TryParse(numTwo, out double num2);
+
+        if (isTrue1 == false || isTrue2 == false)
         {
-            return $"{numOne} is greater than {numTwo}.\n{numTwo} is less than {numOne}.";
-        }
-        else if (numTwo > numOne)
-        {
-            return $"{numOne} is less than {numTwo}.\n{numTwo} is greater than {numOne}.";
+            return "User input was not a valid number. Try again!";
         }
         else
         {
-            return $"{numOne} is equal to {numTwo}.\n{numTwo} is equal to {numOne}.";
+            if (num1 > num2)
+            {
+                return $"{num1} is greater than {num2}.\n{num2} is less than {num1}.";
+            }
+            else if (num2 > num1)
+            {
+                return $"{num1} is less than {num2}.\n{num2} is greater than {num1}.";
+            }
+            else
+            {
+                return $"{num1} is equal to {num2}.\n{num2} is equal to {num1}.";
+            }
         }
+
     }
 }

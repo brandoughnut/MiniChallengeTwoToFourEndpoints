@@ -14,7 +14,7 @@ public class GreaterThanOrLessThanController : ControllerBase
     }
     [HttpGet]
     [Route("GreaterLess/{numOne}/{numTwo}")]
-    public string GreaterLess(double numOne, double numTwo)
+    public string GreaterLess(string numOne, string numTwo)
     {
         return _greaterService.GreaterLess(numOne, numTwo);
     }
