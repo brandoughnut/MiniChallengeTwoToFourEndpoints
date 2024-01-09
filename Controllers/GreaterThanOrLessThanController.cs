@@ -16,18 +16,6 @@ public class GreaterThanOrLessThanController : ControllerBase
     [Route("GreaterLess/{numOne}/{numTwo}")]
     public string GreaterLess(double numOne, double numTwo)
     {
-        if (numOne > numTwo)
-        {
-            return _greaterService.GreaterLess(numOne, numTwo);
-        }
-        else if (numTwo > numOne)
-        {
-            return _greaterService.GreaterLess(numOne, numTwo);
-        }
-        else
-        {
-            return _greaterService.GreaterLess(numOne, numTwo);
-        }
-
+        return _greaterService.GreaterLess(numOne, numTwo);
     }
 }
